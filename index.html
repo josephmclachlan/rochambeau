@@ -18,17 +18,36 @@
 
     //function to play a round of RPS
     function playRound () {
-      const playerChoice = prompt('Enter your selection', 'rock')
+      const playerChoice = prompt('Rock, Paper, or Scissors?', 'rock')
       computerChoice = computerPlay();
-      console.log(computerChoice);
-      console.log(playerChoice);
-      if (playerChoice.toLowerCase() === 'rock' && computerChoice === 'scissors') {
-        return `You win! ${playerChoice} beats ${computerChoice} `;
-    } else {
-        return `Test ${playerChoice} and ${computerChoice}`;
+      if (playerChoice.toLowerCase() === 'rock') {
+          if (computerChoice === 'scissors') {
+          return `You win! ${playerChoice.toLocaleLowerCase()} beats ${computerChoice} `;
+        } else if (computerChoice === 'paper') {
+          return `You lose! ${computerChoice} beats ${playerChoice.toLocaleLowerCase()} `;
+        } else {
+          return 'Tie game!';
+        }
+      } else if (playerChoice.toLowerCase() === 'scissors') {
+            if (computerChoice === 'paper') {
+            return `You win! ${playerChoice.toLocaleLowerCase()} beats ${computerChoice} `;
+          } else if (computerChoice === 'rock') {
+            return `You lose! ${computerChoice} beats ${playerChoice.toLocaleLowerCase()} `;
+          } else {
+            return 'Tie game!';
+          }
+      } else if (playerChoice.toLowerCase() === 'paper') {
+            if (computerChoice === 'rock') {
+            return `You win! ${playerChoice.toLocaleLowerCase()} beats ${computerChoice} `;
+          } else if (computerChoice === 'scissors') {
+            return `You lose! ${computerChoice} beats ${playerChoice.toLocaleLowerCase()} `;
+          } else {
+            return 'Tie game!';
+          }
+      } else {
+          return ` Error: ${playerChoice} is not a proper choice`;
+      }
     }
-  }
-
   </script>
 </body>
 </html>
