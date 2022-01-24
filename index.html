@@ -73,6 +73,8 @@
         ++lossCounter
       } 
 
+      console.log(` Wins: ${winCounter} Losses: ${lossCounter}`);
+
       const roundTwo = playRound()
       
       if (roundTwo === "Win") {
@@ -80,6 +82,8 @@
       } else if (roundTwo === "Loss") {
         ++lossCounter
       } 
+
+      console.log(` Wins: ${winCounter} Losses: ${lossCounter}`);
 
       const roundThree = playRound()
       
@@ -89,6 +93,8 @@
         ++lossCounter
       } 
 
+      console.log(` Wins: ${winCounter} Losses: ${lossCounter}`);
+
       const roundFour = playRound()
       
       if (roundFour === "Win") {
@@ -97,6 +103,8 @@
         ++lossCounter
       } 
 
+      console.log(` Wins: ${winCounter} Losses: ${lossCounter}`);
+
       const roundFive = playRound()
       
       if (roundFive === "Win") {
@@ -104,6 +112,8 @@
       } else if (roundFive === "Loss") {
         ++lossCounter
       }
+
+      console.log(` Wins: ${winCounter} Losses: ${lossCounter}`);
 
       if (winCounter > lossCounter) {
         alert(`You win! ${winCounter} to ${lossCounter}`)
@@ -118,6 +128,7 @@
         winCounter = 0
         lossCounter = 0
       }
+
     } 
 
 
