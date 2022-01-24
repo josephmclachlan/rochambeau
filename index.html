@@ -22,32 +22,43 @@
       computerChoice = computerPlay();
       if (playerChoice.toLowerCase() === 'rock') {
           if (computerChoice === 'scissors') {
-          return `You win! ${playerChoice.toLocaleLowerCase()} beats ${computerChoice} `;
+          alert(`You win! ${playerChoice.toLocaleLowerCase()} beats ${computerChoice} `)
+          return "Win";
         } else if (computerChoice === 'paper') {
-          return `You lose! ${computerChoice} beats ${playerChoice.toLocaleLowerCase()} `;
+          alert(`You lose! ${computerChoice} beats ${playerChoice.toLocaleLowerCase()} `)
+          return "Loss";
         } else {
-          return 'Tie game!';
+          alert('Tie game!')
+          return "Tie";
         }
       } else if (playerChoice.toLowerCase() === 'scissors') {
             if (computerChoice === 'paper') {
-            return `You win! ${playerChoice.toLocaleLowerCase()} beats ${computerChoice} `;
+            alert(`You win! ${playerChoice.toLocaleLowerCase()} beats ${computerChoice} `)
+            return "Win";
           } else if (computerChoice === 'rock') {
-            return `You lose! ${computerChoice} beats ${playerChoice.toLocaleLowerCase()} `;
+            alert(`You lose! ${computerChoice} beats ${playerChoice.toLocaleLowerCase()} `)
+            return "Loss";
           } else {
-            return 'Tie game!';
+            alert('Tie game!')
+            return "Tie";
           }
       } else if (playerChoice.toLowerCase() === 'paper') {
             if (computerChoice === 'rock') {
-            return `You win! ${playerChoice.toLocaleLowerCase()} beats ${computerChoice} `;
+            alert(`You win! ${playerChoice.toLocaleLowerCase()} beats ${computerChoice} `)
+            return "Win";
           } else if (computerChoice === 'scissors') {
-            return `You lose! ${computerChoice} beats ${playerChoice.toLocaleLowerCase()} `;
+            alert(`You lose! ${computerChoice} beats ${playerChoice.toLocaleLowerCase()} `)
+            return "Loss";
           } else {
-            return 'Tie game!';
+            alert('Tie game!')
+            return "Tie";
           }
       } else {
-          return ` Error: ${playerChoice} is not a proper choice`;
+          alert(` Error: ${playerChoice} is not a proper choice`);
       }
     }
+
+
   </script>
 </body>
 </html>
