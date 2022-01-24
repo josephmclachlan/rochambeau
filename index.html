@@ -8,16 +8,27 @@
 </head>
 <body>
   <script>
-
+    //creates an array that allows for a selection of rock, paper, or scissors
     const gameElements = ['rock', 'paper', 'scissors']
 
+    //creates a function that allows the computer to output its own selection of r/p/s
     function computerPlay() {
       return gameElements[Math.floor(Math.random() * gameElements.length)]
     }
 
-    console.log(computerPlay());
+    //function to play a round of RPS
+    function playRound () {
+      const playerChoice = prompt('Enter your selection', 'rock')
+      computerChoice = computerPlay();
+      console.log(computerChoice);
+      console.log(playerChoice);
+      if (playerChoice.toLowerCase() === 'rock' && computerChoice === 'scissors') {
+        return `You win! ${playerChoice} beats ${computerChoice} `;
+    } else {
+        return `Test ${playerChoice} and ${computerChoice}`;
+    }
+  }
 
   </script>
 </body>
 </html>
-
