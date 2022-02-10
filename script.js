@@ -23,23 +23,54 @@ let userCounter = 0;
 
 let roundCounter = 0;
 
+
 function updateComputerCounter() {
   computerCounter += 1;
+  if (computerCounter === 5) {
   computerPlayer.innerHTML = `Computer Wins: ${computerCounter}`;
+  alert(`Game Over! Computer Wins`);
+  newGame();
+  } else {
+    computerPlayer.innerHTML = `Computer Wins: ${computerCounter}`;
+  }
 }
 
 function updatePlayerCounter() {
   userCounter += 1;
+  if (userCounter === 5) {
   userPlayer.innerHTML = `Player Wins: ${userCounter}`;
+  alert(`Game Over! Player Wins`);
+  newGame();
+    } else {
+      userPlayer.innerHTML = `Player Wins: ${userCounter}`;
+    }
 }
 
 function computerPlay() {
 return gameElements[Math.floor(Math.random() * gameElements.length)]
 }
 
+function newGame() {
+const newGame = confirm('Would you like to play a new game?')
+if (newGame === true) {
+  userCounter = 0;
+  roundCounter = 0;
+  computerCounter = 0;
+  roundDisplay.innerHTML = `Rounds Played: ${roundCounter}`;
+  computerPlayer.innerHTML = `Computer Wins: ${computerCounter}`;
+  userPlayer.innerHTML = `Player Wins: ${userCounter}`;
+} else {
+  return;
+}
+}
+
 function playRound (logEvent) {
 const playerChoice = logEvent;
 const computerChoice = computerPlay();
+if (userCounter === 5 || computerCounter === 5){
+  alert('Game Over');
+  newGame();
+}
 if (roundCounter === 0) {
   roundCounter += 1;
   roundDisplay.innerHTML = `Rounds Played: ${roundCounter}`;
@@ -64,99 +95,24 @@ if (playerChoice.toLowerCase() === 'rock') {
 } else if (playerChoice.toLowerCase() === 'scissors') {
     if (computerChoice === 'paper') {
     alert(`You win! ${playerChoice.toLowerCase()} beats ${computerChoice} `)
-    return "Win";
+    updatePlayerCounter();
   } else if (computerChoice === 'rock') {
     alert(`You lose! ${computerChoice} beats ${playerChoice.toLowerCase()} `)
-    return "Loss";
+    updateComputerCounter();
   } else {
     alert('Tie game!')
-    return "Tie";
   }
 } else if (playerChoice.toLowerCase() === 'paper') {
     if (computerChoice === 'rock') {
     alert(`You win! ${playerChoice.toLowerCase()} beats ${computerChoice} `)
-    return "Win";
+    updatePlayerCounter();
   } else if (computerChoice === 'scissors') {
     alert(`You lose! ${computerChoice} beats ${playerChoice.toLowerCase()} `)
-    return "Loss";
+    updateComputerCounter();
   } else {
     alert('Tie game!')
-    return "Tie";
   }
 } else {
   alert(` Error: ${playerChoice} is not a proper choice`);
 }
 }
-
-
-
-
-
-//function to run 5 rounds of RPS and return counters of wins vs losses with final win/loss declaration
-// function game() {
-
-//   const roundOne = playRound()
-
-//   if (roundOne === "Win") {
-//     ++winCounter
-//   } else if (roundOne === "Loss") {
-//     ++lossCounter
-//   } 
-
-//   console.log(` Wins: ${winCounter} Losses: ${lossCounter}`);
-
-//   const roundTwo = playRound()
-
-//   if (roundTwo === "Win") {
-//     ++winCounter
-//   } else if (roundTwo === "Loss") {
-//     ++lossCounter
-//   } 
-
-//   console.log(` Wins: ${winCounter} Losses: ${lossCounter}`);
-
-//   const roundThree = playRound()
-
-//   if (roundThree === "Win") {
-//     ++winCounter
-//   } else if (roundThree === "Loss") {
-//     ++lossCounter
-//   } 
-
-//   console.log(` Wins: ${winCounter} Losses: ${lossCounter}`);
-
-//   const roundFour = playRound()
-
-//   if (roundFour === "Win") {
-//     ++winCounter
-//   } else if (roundFour === "Loss") {
-//     ++lossCounter
-//   } 
-
-//   console.log(` Wins: ${winCounter} Losses: ${lossCounter}`);
-
-//   const roundFive = playRound()
-
-//   if (roundFive === "Win") {
-//     ++winCounter
-//   } else if (roundFive === "Loss") {
-//     ++lossCounter
-//   }
-
-//   console.log(` Wins: ${winCounter} Losses: ${lossCounter}`);
-
-//   if (winCounter > lossCounter) {
-//     alert(`You win! ${winCounter} to ${lossCounter}`)
-//     winCounter = 0
-//     lossCounter = 0
-//   } else if (winCounter < lossCounter) {
-//     alert(`You lose! ${lossCounter} to ${winCounter}`)
-//     winCounter = 0
-//     lossCounter = 0
-//   } else {
-//     alert(`Tie game! ${winCounter} to ${lossCounter}`)
-//     winCounter = 0
-//     lossCounter = 0
-//   }
-
-// } 
