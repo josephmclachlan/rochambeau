@@ -15,6 +15,8 @@ let computerPlayer = document.getElementById('computerCounter');
 
 let userPlayer = document.getElementById('playerCounter');
 
+let roundDisplay = document.getElementById('roundDisplay');
+
 let computerCounter = 0;
 
 let userCounter = 0;
@@ -39,12 +41,14 @@ function playRound (logEvent) {
 const playerChoice = logEvent;
 const computerChoice = computerPlay();
 if (roundCounter === 0) {
+  roundCounter += 1;
+  roundDisplay.innerHTML = `Rounds Played: ${roundCounter}`;
   computerPlayer.innerHTML = `Computer Wins: ${computerCounter}`;
   userPlayer.innerHTML = `Player Wins: ${userCounter}`;
   alert('Good Luck!');
-  roundCounter += 1;
 } else {
   roundCounter += 1;
+  roundDisplay.innerHTML = `Rounds Played: ${roundCounter}`;
 }
 if (playerChoice.toLowerCase() === 'rock') {
   if (computerChoice === 'scissors') {
