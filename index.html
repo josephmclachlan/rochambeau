@@ -5,133 +5,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <script>
-    //creates an array that allows for a selection of rock, paper, or scissors
-    const gameElements = ['rock', 'paper', 'scissors']
-
-    //create counters to track wins and losses
-    let winCounter = 0
-    let lossCounter = 0
-
-    //creates a function that allows the computer to output its own selection of r/p/s
-    function computerPlay() {
-      return gameElements[Math.floor(Math.random() * gameElements.length)]
-    }
-
-    //function to play a round of RPS
-    function playRound () {
-      const playerChoice = prompt('Rock, Paper, or Scissors?', 'rock')
-      computerChoice = computerPlay();
-      if (playerChoice.toLowerCase() === 'rock') {
-          if (computerChoice === 'scissors') {
-          alert(`You win! ${playerChoice.toLocaleLowerCase()} beats ${computerChoice} `)
-          return "Win";
-        } else if (computerChoice === 'paper') {
-          alert(`You lose! ${computerChoice} beats ${playerChoice.toLocaleLowerCase()} `)
-          return "Loss";
-        } else {
-          alert('Tie game!')
-          return "Tie";
-        }
-      } else if (playerChoice.toLowerCase() === 'scissors') {
-            if (computerChoice === 'paper') {
-            alert(`You win! ${playerChoice.toLocaleLowerCase()} beats ${computerChoice} `)
-            return "Win";
-          } else if (computerChoice === 'rock') {
-            alert(`You lose! ${computerChoice} beats ${playerChoice.toLocaleLowerCase()} `)
-            return "Loss";
-          } else {
-            alert('Tie game!')
-            return "Tie";
-          }
-      } else if (playerChoice.toLowerCase() === 'paper') {
-            if (computerChoice === 'rock') {
-            alert(`You win! ${playerChoice.toLocaleLowerCase()} beats ${computerChoice} `)
-            return "Win";
-          } else if (computerChoice === 'scissors') {
-            alert(`You lose! ${computerChoice} beats ${playerChoice.toLocaleLowerCase()} `)
-            return "Loss";
-          } else {
-            alert('Tie game!')
-            return "Tie";
-          }
-      } else {
-          alert(` Error: ${playerChoice} is not a proper choice`);
-      }
-    }
-
-    //function to run 5 rounds of RPS and return counters of wins vs losses with final win/loss declaration
-    function game() {
-      
-      const roundOne = playRound()
-      
-      if (roundOne === "Win") {
-        ++winCounter
-      } else if (roundOne === "Loss") {
-        ++lossCounter
-      } 
-
-      console.log(` Wins: ${winCounter} Losses: ${lossCounter}`);
-
-      const roundTwo = playRound()
-      
-      if (roundTwo === "Win") {
-        ++winCounter
-      } else if (roundTwo === "Loss") {
-        ++lossCounter
-      } 
-
-      console.log(` Wins: ${winCounter} Losses: ${lossCounter}`);
-
-      const roundThree = playRound()
-      
-      if (roundThree === "Win") {
-        ++winCounter
-      } else if (roundThree === "Loss") {
-        ++lossCounter
-      } 
-
-      console.log(` Wins: ${winCounter} Losses: ${lossCounter}`);
-
-      const roundFour = playRound()
-      
-      if (roundFour === "Win") {
-        ++winCounter
-      } else if (roundFour === "Loss") {
-        ++lossCounter
-      } 
-
-      console.log(` Wins: ${winCounter} Losses: ${lossCounter}`);
-
-      const roundFive = playRound()
-      
-      if (roundFive === "Win") {
-        ++winCounter
-      } else if (roundFive === "Loss") {
-        ++lossCounter
-      }
-
-      console.log(` Wins: ${winCounter} Losses: ${lossCounter}`);
-
-      if (winCounter > lossCounter) {
-        alert(`You win! ${winCounter} to ${lossCounter}`)
-        winCounter = 0
-        lossCounter = 0
-      } else if (winCounter < lossCounter) {
-        alert(`You lose! ${lossCounter} to ${winCounter}`)
-        winCounter = 0
-        lossCounter = 0
-      } else {
-        alert(`Tie game! ${winCounter} to ${lossCounter}`)
-        winCounter = 0
-        lossCounter = 0
-      }
-
-    } 
-
-
-  </script>
+<button value="rock">Rock</button>
+<button value="paper">Paper</button>
+<button value="scissors">Scissors</button>
+<div id="counter">
+  <div id="computerCounter"></div>
+  <div id="playerCounter"></div>
+</div>
 </body>
 </html>
