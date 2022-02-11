@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@0;1&family=Roboto&display=swap" rel="stylesheet"> 
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@0;1&family=Roboto&display=swap" rel="stylesheet">
+  </head>
 <body>
     <!-- this doc uses BEM (block element modifier) syntax. block 
         (heading, right-links), element (heading_right-links), modifier 
@@ -23,26 +23,29 @@
           Pistol beats Cutlass | Flagon Beats Pistol | Cutlass Beats Flagon
         </h2>
         <div id="game">
-            <button value="pistol">
-                <img class="button_img" src="./Images/pistol.png" alt="pistol">
+            <button value="Pistol">
+                <img class="button_img" src="./Images/pistol.png" alt="Pistol">
             </button>
-            <button value="flagon">
-                <img class="button_img" src="./Images/flagon.png" alt="flagon">
+            <button value="Flagon">
+                <img class="button_img" src="./Images/flagon.png" alt="Flagon">
             </button>
-            <button value="cutlass">
-                <img class="button_img" src="./Images/cutlass.png" alt="cutlass">
+            <button value="Cutlass">
+                <img class="button_img" src="./Images/cutlass.png" alt="Cutlass">
             </button>
         </div>
         <div id="counter">
-          <div id="playerCounter" class="counter_element"></div>
-          <div id="roundDisplay" class="counter_element"></div>
-          <div id="computerCounter" class="counter_element"></div>
+          <div id="playerCounter" class="counter_element">Player Wins: 0</div>
+          <div id="roundDisplay" class="counter_element">Rounds Played: 0</div>
+          <div id="computerCounter" class="counter_element">Computer Wins: 0</div>
         </div>
-        <h2 id="announcer"></h2>
+        <h2 id="announcer">Good Luck</h2>
         <div id="combat-display">
-          <div id="combat-display_player" class="combat-display_contents"></div>
-          <div id="combat-diplay_vs" class="combat-display_contents"></div>
-          <div id="combat-display_computer" class="combat-display_contents"></div>
+          <div id="combat-display_player" class="combat-display_contents">
+          </div>
+          <div id="combat-display_vs" class="combat-display_contents">
+          </div>
+          <div id="combat-display_computer" class="combat-display_contents">
+          </div>
         </div>
 
     
