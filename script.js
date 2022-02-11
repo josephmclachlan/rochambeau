@@ -1,4 +1,4 @@
-const gameElements = ['rock', 'paper', 'scissors']
+const gameElements = ['pistol', 'flagon', 'cutlass']
 
 
 let btn = document.querySelectorAll('button');
@@ -22,6 +22,14 @@ let computerCounter = 0;
 let userCounter = 0;
 
 let roundCounter = 0;
+
+let playerCombat = document.getElementById('combat-display_player');
+
+let vsCombat = document.getElementById('combat-display_vs');
+
+let computerCombat = document.getElementById('combat-display_computer');
+
+let announcer = document.getElementById('announcer');
 
 
 function updateComputerCounter() {
@@ -81,32 +89,32 @@ if (roundCounter === 0) {
   roundCounter += 1;
   roundDisplay.innerHTML = `Rounds Played: ${roundCounter}`;
 }
-if (playerChoice.toLowerCase() === 'rock') {
-  if (computerChoice === 'scissors') {
+if (playerChoice.toLowerCase() === 'pistol') {
+  if (computerChoice === 'cutlass') {
   alert(`You win! ${playerChoice.toLowerCase()} beats ${computerChoice} `)
   updatePlayerCounter();
-} else if (computerChoice === 'paper') {
+} else if (computerChoice === 'flagon') {
   alert(`You lose! ${computerChoice} beats ${playerChoice.toLowerCase()} `)
   updateComputerCounter();
 } else {
   alert('Tie game!')
 
 }
-} else if (playerChoice.toLowerCase() === 'scissors') {
-    if (computerChoice === 'paper') {
+} else if (playerChoice.toLowerCase() === 'cutlass') {
+    if (computerChoice === 'flagon') {
     alert(`You win! ${playerChoice.toLowerCase()} beats ${computerChoice} `)
     updatePlayerCounter();
-  } else if (computerChoice === 'rock') {
+  } else if (computerChoice === 'pistol') {
     alert(`You lose! ${computerChoice} beats ${playerChoice.toLowerCase()} `)
     updateComputerCounter();
   } else {
     alert('Tie game!')
   }
-} else if (playerChoice.toLowerCase() === 'paper') {
-    if (computerChoice === 'rock') {
+} else if (playerChoice.toLowerCase() === 'flagon') {
+    if (computerChoice === 'pistol') {
     alert(`You win! ${playerChoice.toLowerCase()} beats ${computerChoice} `)
     updatePlayerCounter();
-  } else if (computerChoice === 'scissors') {
+  } else if (computerChoice === 'cutlass') {
     alert(`You lose! ${computerChoice} beats ${playerChoice.toLowerCase()} `)
     updateComputerCounter();
   } else {
